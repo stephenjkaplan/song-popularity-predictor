@@ -10,3 +10,4 @@ dependencies:
       - spotipy
       - selenium
       - beautifulsoup4
+      - streamlit
