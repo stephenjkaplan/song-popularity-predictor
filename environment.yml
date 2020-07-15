@@ -1,0 +1,12 @@
+name: songpopularity
+dependencies:
+  - python=3.7
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - statsmodels
+  - pip:
+      - spotipy
+      - selenium
+      - beautifulsoup4
