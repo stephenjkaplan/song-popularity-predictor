@@ -16,7 +16,7 @@ def scroll_infinite_page(driver, num_albums, scroll_pause=1.0):
     album reviews to load on the page. Scrolls until it counts a sufficient number of album review elements on the
     HTML page.
 
-    :param object driver: Selenium web driver
+    :param selenium.webdriver.chrome.webdriver.WebDriver driver: Selenium web driver
     :param int num_albums: The number of albums to pull Pitchfork reviews for.
     :param float scroll_pause: Time (seconds) to wait for page to load after scroll.
     """
@@ -57,7 +57,7 @@ def get_album_review_urls(driver, num_albums):
     """
     Gets links to specified number of album reviews.
 
-    :param object driver: Selenium web driver
+    :param selenium.webdriver.chrome.webdriver.WebDriver driver: Selenium web driver
     :param int num_albums: The number of albums to pull Pitchfork reviews for.
     :return: URLs to album reviews
     :rtype: list
@@ -73,12 +73,12 @@ def get_pitchfork_album_ratings_for_genre(driver, genre, num_albums):
     """
     Gets Pitchfork album ratings and other useful metadata for a particular genre and number of albums.
 
-    :param object driver: Selenium web driver
+    :param selenium.webdriver.chrome.webdriver.WebDriver driver: Selenium web driver
     :param str genre: Genre of music to get album reviews for. Must be one of: ['Electronic', 'Experimental',
                       'Folk/Country', 'Global', 'Jazz', 'Metal', 'Pop/R&B', 'Rap/Hip-Hop', 'Rock'].
     :param int num_albums: The number of albums to pull Pitchfork reviews for.
     :return: Pandas DataFrame containing Pitchfork album review data for a particular genre of music.
-    :rtype: object
+    :rtype: pandas.DataFrame
     """
     print(f'Scraping Pitchfork album ratings for {genre} genre...')
 
@@ -102,13 +102,13 @@ def get_pitchfork_album_ratings(driver, genres, num_albums_per_genre):
     Gets Pitchfork album ratings and other useful metadata for a specified list of genres, and number of albums reviews
     per genre.
 
-    :param object driver: Selenium web driver
+    :param selenium.webdriver.chrome.webdriver.WebDriver driver: Selenium web driver
     :param int num_albums_per_genre: The number of albums to pull Pitchfork reviews for each genre specified.
     :param list genres: List of genre of music to get album reviews for. Must consist of only the following:
                         ['Electronic', 'Experimental', 'Folk/Country', 'Global', 'Jazz', 'Metal', 'Pop/R&B',
                         'Rap/Hip-Hop', 'Rock'].
     :return: Pandas DataFrame containing Pitchfork album review data.
-    :rtype: object
+    :rtype: pandas.DataFrame
     """
     genre_dataframes = [get_pitchfork_album_ratings_for_genre(driver, genre, num_albums_per_genre) for genre in genres]
     driver.quit()   # close Chrome window

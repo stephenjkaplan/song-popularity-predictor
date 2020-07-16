@@ -18,10 +18,10 @@ ALL_GENRES = ['Electronic', 'Experimental', 'Folk/Country', 'Global', 'Jazz', 'M
 
 def pair_plot_for_music_genre(data, genre):
     """
+    Filters data by genre and plots pair plot of all columns.
 
-    :param data:
-    :param genre:
-    :return:
+    :param pandas.DataFrame data: Pandas DataFrame with a format specific to `FINAL EDA & Modeling Workbook (Project V2).ipynb`.
+    :param str genre: Genre of music to show pair plot for. Must be in ALL_GENRES variable defined in this file.
     """
     df = data[data[genre] == 1]
     df.drop(ALL_GENRES, axis=1, inplace=True)
@@ -34,11 +34,14 @@ def score_baseline_linear_regression_model(X, y):
     For a set of features and target X, y, perform a 80/20 train/val split,
     fit and validate a linear regression model, and report results
 
-    The function below calculates a validation and training score by doing a cross validation on the validation data and training data, respectively. It does this because I was noticing far too much variation in the scores done on a single fit (as a result of the pseudo-randomness of train-test-split).
+    The function uses cross validation to score the model because there is too much variation in the scores done on a
+    single fit (as a result of the pseudo-randomness of train-test-split).
+
+    :param pandas.DataFrame X: Features to train linear regression on.
+    :param pandas.DataFrame y: Targets to train linear regression on.
     """
     # perform train/val split
-    X_train, X_val, y_train, y_val = \
-        train_test_split(X, y, test_size=0.25)
+    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.25)
 
     # fit linear regression to training data
     lr_model = LinearRegression()
@@ -60,12 +63,12 @@ def score_baseline_linear_regression_model(X, y):
 
 def manual_cross_validate(X, y, estimator, cv=5):
     """
+    Performs a k-fold cross validation on a trained model and reports results.
 
-    :param X:
-    :param y:
-    :param estimator:
-    :param cv:
-    :return:
+    :param pandas.DataFrame X: Features to train linear regression on.
+    :param pandas.DataFrame y: Targets to train linear regression on.
+    :param estimator: scikit-learn model such as LinearRegression
+    :param int cv: Number of K-Folds for cross validation.
     """
     kf = KFold(n_splits=cv, shuffle=True)
     r2_train, r2_val, rmse = [], [], []
@@ -92,16 +95,17 @@ def manual_cross_validate(X, y, estimator, cv=5):
 
 def manual_cross_validate_poly(X, y, estimator, cv=5):
     """
+    Performs a k-fold cross validation on a trained model with polynomial features and reports results.
 
-    :param X:
-    :param y:
-    :param estimator:
-    :param cv:
-    :return:
+    :param pandas.DataFrame X: Features to train linear regression on.
+    :param pandas.DataFrame y: Targets to train linear regression on.
+    :param estimator: scikit-learn model such as LinearRegression
+    :param int cv: Number of K-Folds for cross validation.
     """
     kf = KFold(n_splits=cv, shuffle=True)
     r2_train, r2_val, rmse = [], [], []
     for train_ind, val_ind in kf.split(X, y):
+        # different indexing for polynomial features
         X_train, y_train = X[train_ind], y.iloc[train_ind]
         X_val, y_val = X[val_ind], y.iloc[val_ind]
 
