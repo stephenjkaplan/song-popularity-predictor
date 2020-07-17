@@ -2,7 +2,9 @@
 
 #### Description
 Predicting Spotify song "popularity" scores using linear regression and track audio features/metadata from the Spotify 
-API. The popularity of a track is algorithmically calculated, and is a combination of how many plays a track has and 
+API. 
+
+The popularity of a track is algorithmically calculated, and is a combination of how many plays a track has and 
 how recent those plays are. This was developed over a 2-week span in July 2020 as a project for 
 the [Metis](https://thisismetis.com) data science program.
 
