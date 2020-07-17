@@ -1,5 +1,8 @@
 # Song Popularity Predictor
 
+Play around with the model and make predictions using the [web app](https://predictingsongpopularity.stephenjkaplan.com/) 
+I made using [Streamlit](https://www.streamlit.io/).
+
 #### Description
 Predicting Spotify song "popularity" scores using linear regression and track audio features/metadata from the Spotify 
 API. 
@@ -9,11 +12,8 @@ how recent those plays are. This was developed over a 2-week span in July 2020 a
 the [Metis](https://thisismetis.com) data science program.
 
 The model in `data/final_model.pkl` was trained on Spotify audio features and other data defined below, using a Lasso 
-linear model. The R2 score is `0.58` and it has a RMSE is `13.82`. The code is located here and the blog post about it 
-is here.
-
-**I made a [web app](https://predictingsongpopularity.stephenjkaplan.com/) using [Streamlit](https://www.streamlit.io/) 
-to play around with the model and make predictions.**
+linear model. The R2 score is `0.58` and it has a RMSE is `13.82`. The blog post about it is 
+[here](https://stephenjkaplan.github.io/).
 
 #### Data Sources
 * [Pitchfork](https://pitchfork.com/) Album Reviews
@@ -37,7 +37,7 @@ to play around with the model and make predictions.**
 
 #### Dependencies
 
-The Python packages required for this project are listed in both `environment.yml` & `requirements.txt`. 
+The Python packages required for this project are listed in both `requirements.txt` & `environment.yml`. 
 You can install the packages via:
 
 `pip install -r requirements.txt`
