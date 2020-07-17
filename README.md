@@ -1,6 +1,6 @@
 # Song Popularity Predictor
 
-Play around with the model and make predictions using the [web app](https://predictingsongpopularity.stephenjkaplan.com/) 
+Play around with the model and make predictions using the [web app](https://song-popularity-predictor.wm.r.appspot.com/) 
 I made using [Streamlit](https://www.streamlit.io/).
 
 #### Description
