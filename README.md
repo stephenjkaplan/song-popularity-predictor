@@ -1,7 +1,7 @@
 # Song Popularity Predictor
 
 Play around with the model and make predictions using the [web app](https://song-popularity-predictor.wm.r.appspot.com/) 
-I made using [Streamlit](https://www.streamlit.io/).
+I made using [Streamlit](https://www.streamlit.io/). _As of 7-17-20 some people are having trouble accessing the application. Currently under investigation._
 
 #### Description
 Predicting Spotify song "popularity" scores using linear regression and track audio features/metadata from the Spotify 
