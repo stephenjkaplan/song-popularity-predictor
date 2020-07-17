@@ -10,7 +10,8 @@ The model in `data/final_model.pkl` was trained on Spotify audio features and ot
 linear model. The R2 score is `0.58` and it has a RMSE is `13.82`. The code is located here and the blog post about it 
 is here.
 
-**I made a web app using [Streamlit](https://www.streamlit.io/) to play around with the model and make predictions.
+**I made a [web app](https://predictingsongpopularity.stephenjkaplan.com/) using [Streamlit](https://www.streamlit.io/) 
+to play around with the model and make predictions.**
 
 #### Data Sources
 * [Pitchfork](https://pitchfork.com/) Album Reviews
