@@ -1,6 +1,6 @@
 # Song Popularity Predictor
 
-Play around with the model and make predictions using the [web app](https://song-popularity-predictor.appspot.com/)
+Play around with the model and make predictions using the [web app](https://song-popularity-predictor.herokuapp.com/)
 I made using [Streamlit](https://www.streamlit.io/).
 
 Read the [blog post](https://stephenjkaplan.github.io/2020/07/17/predicting-song-popularity/).
@@ -36,6 +36,7 @@ linear model. The R2 score is `0.58` and it has a RMSE is `13.82`. The blog post
     - `modeling_utilities.py` contains functions used in the modeling Jupyter Notebooks.
 * `app.py` contains code for a [Streamlit](https://www.streamlit.io/) app that can be used to play around 
   with the model and make predictions.
+* `Procfile` and `setup.sh` are files necessary for deploying the streamlit app to Heroku.
 
 #### Dependencies
 
