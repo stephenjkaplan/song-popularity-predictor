@@ -1,3 +1,0 @@
-runtime: python37
-env: standard
-entrypoint: streamlit run --server.port 8080 --server.enableCORS false app.py
